@@ -12,5 +12,8 @@ function myProcessor(input) {
     return {'your own': 'custom result'};
 }
 
+// The task name should be set as an anvironment variable:
+process.env.TASK_NAME='your-task-name-is-the-last-part-of-the-activity-arn';
+
 runForever(myProcessor).catch(err => console.error(err));
 ```
