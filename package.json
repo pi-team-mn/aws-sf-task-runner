@@ -1,0 +1,47 @@
+{
+  "name": "@pi-team-mn/aws-sf-task-runner",
+  "version": "1.0.0",
+  "description": "Continuously fetch and run an AWS Step Function activity task",
+  "main": "./lib/task-runner.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc && tslint -p tsconfig.json --format stylish -e \"src/*.spec.ts\"",
+    "lint": "tslint -p tsconfig.json --format stylish -e \"src/*.spec.ts\"",
+    "tsc": "tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pi-team-mn/aws-sf-task-runner.git"
+  },
+  "files": [
+    "lib/!(*.spec).js",
+    "lib/!(*.spec).d.ts"
+  ],
+  "keywords": [
+    "aws",
+    "amazon",
+    "step",
+    "function",
+    "activity",
+    "task",
+    "runner"
+  ],
+  "author": "pi-team@mn.nl",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/pi-team-mn/aws-sf-task-runner/issues"
+  },
+  "homepage": "https://github.com/pi-team-mn/aws-sf-task-runner#readme",
+  "dependencies": {
+    "@pi-team-mn/envkey": "^1.0.1",
+    "aws-sdk": "^2.290.0",
+    "promise-retry": "^1.1.1"
+  },
+  "devDependencies": {
+    "@types/node": "^10.5.7",
+    "@types/promise-retry": "^1.1.2",
+    "ts-node": "^7.0.0",
+    "tslint": "^5.11.0",
+    "typescript": "^3.0.1"
+  }
+}
