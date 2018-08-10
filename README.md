@@ -1,4 +1,7 @@
 # aws-sf-task-runner
+<a href="https://circleci.com/gh/pi-team-mn/aws-sf-task-runner/tree/master">
+        <img src="https://circleci.com/gh/pi-team-mn/aws-sf-task-runner/tree/master.svg?style=svg"
+            alt="build status"></a>
 Continuously fetch and run an AWS Step Function activity task
 
 ```javascript
