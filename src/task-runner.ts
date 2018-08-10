@@ -80,7 +80,7 @@ export async function runForever(activityTaskProcessor: ActivityTaskProcessor) {
                 await retryElseSwallow(SF.sendTaskFailure({ taskToken, cause: err.stack || err, error }).promise());
                 continue;
             }
-            await retryElseSwallow(SF.sendTaskSuccess({ taskToken, output: JSON.stringify(result) }).promise());
+            await retryElseSwallow(SF.sendTaskSuccess({ taskToken, output: JSON.stringify(result || {}) }).promise());
         }
     }
 }
