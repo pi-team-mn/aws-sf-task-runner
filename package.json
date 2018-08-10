@@ -1,6 +1,6 @@
 {
   "name": "@pi-team-mn/aws-sf-task-runner",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Continuously fetch and run an AWS Step Function activity task",
   "main": "./lib/task-runner.js",
   "scripts": {
