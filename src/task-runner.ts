@@ -5,7 +5,7 @@ import * as AWS from 'aws-sdk';
 import { hostname } from 'os';
 import promiseRetry = require('promise-retry');
 
-AWS.config.update({ region: process.env.AWS_DEFAULT_REGION || 'eu-west-1' });
+AWS.config.update({ region: process.env.AWS_REGION || process.env.AWS_DEFAULT_REGION || 'eu-west-1' });
 
 if (process.env.HTTPS_PROXY) {
     console.log('HTTPS_PROXY environment var set, will use proxy-agent. If this fails try installing it first: npm i proxy-agent');
@@ -51,7 +51,7 @@ async function timedProcessing(fn: Function, input: any) {
     return result;
 }
 
-export async function runForever(activityTaskProcessor: Function) {
+export async function runForever(activityTaskProcessor: ActivityTaskProcessor) {
 
     const accountId = (await new AWS.STS().getCallerIdentity().promise()).Account;
     const activityArn = `arn:aws:states:${AWS.config.region}:${accountId}:activity:${taskName}`;
@@ -84,3 +84,5 @@ export async function runForever(activityTaskProcessor: Function) {
         }
     }
 }
+
+export type ActivityTaskProcessor = (input: any) => any;
